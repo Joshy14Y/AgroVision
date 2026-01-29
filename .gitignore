@@ -1,0 +1,13 @@
+venv/
+.env
+
+/models/*.pt
+/models/*.onnx
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+mlruns/
+
+.ruff_cache/
