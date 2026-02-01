@@ -1,0 +1,14 @@
+{
+    "fresh_apple": 0.8290065766701281,
+    "fresh_banana": 0.773578811369509,
+    "fresh_bitter_gourd": 3.4861717612809318,
+    "fresh_capsicum": 1.151996151996152,
+    "fresh_orange": 0.9041147602869007,
+    "fresh_tomato": 1.1620572537603104,
+    "stale_apple": 0.5104433077578857,
+    "stale_banana": 0.8137954468229698,
+    "stale_bitter_gourd": 3.1933333333333334,
+    "stale_capsicum": 1.2651875330163762,
+    "stale_orange": 0.814625850340136,
+    "stale_tomato": 1.1620572537603104
+}

@@ -1,16 +1,19 @@
 [project]
 name = "agrovision"
 version = "0.1.0"
-requires-python = "==3.12.7"
+requires-python = "==3.13.5"
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py313"
 line-length = 88
 indent-width = 4
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "UP", "B", "SIM"]
-ignore = ["E501"]
+select = ["E", "F", "I", "UP", "B", "SIM", "N", "RUF", "C90"]
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/config.py" = ["N802"]
 
 [tool.ruff.format]
 quote-style = "double"

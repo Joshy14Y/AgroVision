@@ -1,13 +1,13 @@
 venv/
 .env
 
-/models/*.pt
-/models/*.onnx
+*.pt
+*.onnx
 
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
-mlruns/
+*.db
 
 .ruff_cache/
