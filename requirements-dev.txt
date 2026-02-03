@@ -1,0 +1,24 @@
+-r requirements.txt
+
+# --- MLOps (Training & Data) ---
+dvc[s3]
+python-dotenv
+
+# --- Data Processing ---
+pandas
+matplotlib
+seaborn
+scikit-learn
+
+# --- Tools ---
+kagglehub
+ipywidgets
+tqdm
+
+# --- Testing ---
+pytest
+pytest-cov
+httpx
+
+# --- Dev ---
+ruff

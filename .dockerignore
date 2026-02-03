@@ -1,0 +1,33 @@
+# --- Data Science, EDA & MLOps ---
+data/
+notebooks/
+.dvc/
+**/.dvcignore
+**/*.dvc
+
+# --- Python Environment & Bytecode ---
+venv/
+**/__pycache__/
+
+# --- Testing & Quality Assurance ---
+tests/
+.pytest_cache/
+.ruff_cache/
+
+# --- Environment Variables & Secrets ---
+*.env
+
+# --- IDE & Version Control ---
+.vscode/
+.git/
+.gitignore
+
+# --- Build Artifacts & Dev Dependencies ---
+Dockerfile
+.dockerignore
+requirements-dev.txt
+pyproject.toml
+
+# --- Documentation ---
+README.md
+LICENSE

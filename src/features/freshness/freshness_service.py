@@ -1,9 +1,10 @@
+import functools
 import json
 
+import mlflow
 import torch
-import torch.nn as nn
 from PIL import Image
-from torchvision import models, transforms
+from torchvision import transforms
 
 from src.config import settings
 
@@ -13,6 +14,8 @@ from .dtos.freshness_res_dto import FreshnessResDto
 class FreshnessService:
     def __init__(self):
         self.device = settings.DEVICE
+        self.mlflow_server_uri = settings.MLFLOW_SERVER_URI
+        self.mlflow_model_uri = settings.MLFLOW_MODEL_URI
         self._load_artifacts()
         self._load_model()
         self._build_pipeline()
@@ -27,17 +30,10 @@ class FreshnessService:
             self.std = stats["std"]
 
     def _load_model(self):
-        self.model = models.resnet18(weights=None)
-        self.model.fc = nn.Linear(self.model.fc.in_features, len(self.classes))
-
-        state_dict = torch.load(
-            settings.MODEL_WEIGHTS_FILE_PATH,
-            map_location=self.device,
-            weights_only=True,
+        mlflow.set_tracking_uri(self.mlflow_server_uri)
+        self.model = mlflow.pytorch.load_model(
+            self.mlflow_model_uri, map_location=self.device
         )
-
-        self.model.load_state_dict(state_dict)
-        self.model.to(self.device)
         self.model.eval()
 
     def _build_pipeline(self):
@@ -69,4 +65,7 @@ class FreshnessService:
         )
 
 
-service = FreshnessService()
+
+@functools.lru_cache
+def get_freshness_service() -> FreshnessService:
+    return FreshnessService()

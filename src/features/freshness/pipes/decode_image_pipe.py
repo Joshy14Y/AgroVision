@@ -6,9 +6,7 @@ from PIL import Image, UnidentifiedImageError
 
 async def decode_image_pipe(file: UploadFile) -> Image.Image:
     if not file.content_type.startswith("image/"):
-        raise HTTPException(
-            status_code=400, detail="File must be an image."
-        )
+        raise HTTPException(status_code=400, detail="File must be an image.")
 
     content = await file.read()
 
