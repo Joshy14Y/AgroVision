@@ -1,5 +1,4 @@
 # --- Data Science, EDA & MLOps ---
-data/
 mlruns/
 .dvc/cache/
 .dvc/tmp/
