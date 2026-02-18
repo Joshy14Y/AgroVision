@@ -23,6 +23,8 @@ class Settings(BaseSettings):
     MLFLOW_SERVER_URI: str
     MLFLOW_MODEL_URI: str
 
+    ALLOWED_ORIGINS: list[str]
+
     PROJECT_ROOT_DIR_PATH: DirectoryPath = Path(__file__).parent.parent.resolve()
     ARTIFACTS_DIR_NAME: str = "artifacts"
     CLASSES_FILENAME: str = "classes.json"

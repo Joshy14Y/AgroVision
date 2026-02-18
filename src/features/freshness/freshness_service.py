@@ -46,7 +46,7 @@ class FreshnessService:
             ]
         )
 
-    def predict(self, image: Image.Image) -> FreshnessResDto:
+    def classify(self, image: Image.Image) -> FreshnessResDto:
         image = image.convert("RGB")
 
         img_tensor = self.transform(image).unsqueeze(0).to(self.device)
@@ -63,7 +63,6 @@ class FreshnessService:
             confidence=round(confidence.item(), 4),
             class_id=idx,
         )
-
 
 
 @functools.lru_cache
